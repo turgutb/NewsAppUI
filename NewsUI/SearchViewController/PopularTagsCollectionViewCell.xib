@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularTagsCollectionViewCell" id="gTV-IL-0wX" customClass="PopularTagsCollectionViewCell" customModule="NewsUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBn-RF-TRT">
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ronaldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgp-AF-6ei">
+                                <rect key="frame" x="10" y="10" width="270" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Fgp-AF-6ei" secondAttribute="bottom" constant="10" id="9Bu-EZ-bT9"/>
+                            <constraint firstItem="Fgp-AF-6ei" firstAttribute="top" secondItem="gBn-RF-TRT" secondAttribute="top" constant="10" id="IWl-Yb-8Jj"/>
+                            <constraint firstItem="Fgp-AF-6ei" firstAttribute="leading" secondItem="gBn-RF-TRT" secondAttribute="leading" constant="10" id="Omt-DM-uuJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Fgp-AF-6ei" secondAttribute="trailing" constant="10" id="hOA-N3-PPh"/>
+                            <constraint firstItem="Fgp-AF-6ei" firstAttribute="centerY" secondItem="gBn-RF-TRT" secondAttribute="centerY" id="wW8-wZ-aDx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gBn-RF-TRT" secondAttribute="trailing" id="Q8s-cH-UJS"/>
+                <constraint firstItem="gBn-RF-TRT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QDA-SX-3VT"/>
+                <constraint firstItem="gBn-RF-TRT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oFv-ep-j2w"/>
+                <constraint firstAttribute="bottom" secondItem="gBn-RF-TRT" secondAttribute="bottom" id="wEA-jW-MDQ"/>
+            </constraints>
+            <size key="customSize" width="290" height="70"/>
+            <point key="canvasLocation" x="160.86956521739131" y="96.428571428571431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

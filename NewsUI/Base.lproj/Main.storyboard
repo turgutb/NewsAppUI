@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tu8-Vk-xyf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YNq-3H-wWI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-955" y="-164"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="Egl-mO-vYC">
+            <objects>
+                <viewController id="zHq-Vg-Rjz" customClass="CategoriesViewController" customModule="NewsUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NCN-tH-Hhm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sY7-yp-brc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iGP-SZ-6fk">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Hg-3C-aGY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="zHq-Vg-Rjz" id="aEP-ml-uaA"/>
+                                    <outlet property="delegate" destination="zHq-Vg-Rjz" id="Xbh-KG-Nq2"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Eh-70-yDt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sY7-yp-brc" firstAttribute="leading" secondItem="9Eh-70-yDt" secondAttribute="leading" id="Bvl-dE-Mgv"/>
+                            <constraint firstAttribute="bottom" secondItem="sY7-yp-brc" secondAttribute="bottom" id="ZMM-e8-7LK"/>
+                            <constraint firstItem="sY7-yp-brc" firstAttribute="top" secondItem="NCN-tH-Hhm" secondAttribute="top" id="evD-GU-or3"/>
+                            <constraint firstItem="sY7-yp-brc" firstAttribute="trailing" secondItem="9Eh-70-yDt" secondAttribute="trailing" id="sDs-N6-612"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Categories" image="square.grid.2x2.fill" catalog="system" id="JBV-5d-FDT"/>
+                    <connections>
+                        <outlet property="categoriesCollectionView" destination="sY7-yp-brc" id="OWM-11-9uI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KkY-st-D9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082.608695652174" y="-824.33035714285711"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="PKg-f4-oCB">
+            <objects>
+                <viewController id="NYU-cF-jsp" customClass="DiscoverViewController" customModule="NewsUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ljV-or-BdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Y4-eF-OEu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ame-rV-LlD">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Og0-Na-qso">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="NYU-cF-jsp" id="50k-CI-HJK"/>
+                                    <outlet property="delegate" destination="NYU-cF-jsp" id="pTV-Pw-TLX"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eXk-xZ-utX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eXk-xZ-utX" firstAttribute="trailing" secondItem="7Y4-eF-OEu" secondAttribute="trailing" id="RUn-GX-mca"/>
+                            <constraint firstItem="7Y4-eF-OEu" firstAttribute="top" secondItem="eXk-xZ-utX" secondAttribute="top" id="Uws-hY-FZQ"/>
+                            <constraint firstItem="7Y4-eF-OEu" firstAttribute="leading" secondItem="eXk-xZ-utX" secondAttribute="leading" id="fy0-ua-OHL"/>
+                            <constraint firstItem="7Y4-eF-OEu" firstAttribute="bottom" secondItem="eXk-xZ-utX" secondAttribute="bottom" id="uCJ-CT-cZO"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Discover" image="star.fill" catalog="system" id="bcB-h6-O5n"/>
+                    <connections>
+                        <outlet property="discoverCollectionView" destination="7Y4-eF-OEu" id="vpQ-Xe-7vA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhI-0w-cad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082.608695652174" y="-161.38392857142856"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="IAv-Ze-RLW">
+            <objects>
+                <viewController id="XLv-8k-2WG" customClass="SearchViewController" customModule="NewsUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xco-0r-DiA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="MLt-fP-aQ0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="b6R-fZ-Agn"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-V6-rTD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H91-bF-m2s">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XLv-8k-2WG" id="N8m-lE-4Fe"/>
+                                    <outlet property="delegate" destination="XLv-8k-2WG" id="ktD-1h-WXf"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hcp-HR-4mm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MLt-fP-aQ0" firstAttribute="leading" secondItem="hcp-HR-4mm" secondAttribute="leading" id="1Bj-A4-v3p"/>
+                            <constraint firstItem="bM2-V6-rTD" firstAttribute="leading" secondItem="hcp-HR-4mm" secondAttribute="leading" id="55j-XG-ltB"/>
+                            <constraint firstItem="MLt-fP-aQ0" firstAttribute="trailing" secondItem="hcp-HR-4mm" secondAttribute="trailing" id="6a4-Pp-Fvd"/>
+                            <constraint firstItem="MLt-fP-aQ0" firstAttribute="top" secondItem="hcp-HR-4mm" secondAttribute="top" id="Jwo-uB-QYX"/>
+                            <constraint firstItem="bM2-V6-rTD" firstAttribute="trailing" secondItem="hcp-HR-4mm" secondAttribute="trailing" id="Qvs-wa-wQV"/>
+                            <constraint firstItem="bM2-V6-rTD" firstAttribute="bottom" secondItem="hcp-HR-4mm" secondAttribute="bottom" id="VBB-vO-0Ke"/>
+                            <constraint firstItem="bM2-V6-rTD" firstAttribute="top" secondItem="hcp-HR-4mm" secondAttribute="top" constant="44" id="dcj-q6-IPY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="uiQ-cG-N7b"/>
+                    <connections>
+                        <outlet property="searchCollectionView" destination="bM2-V6-rTD" id="kF6-qk-aVA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DDR-WU-Vi2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086.9565217391305" y="591.96428571428567"/>
+        </scene>
+        <!--Today-->
+        <scene sceneID="R3Y-T2-6Xy">
+            <objects>
+                <viewController id="vgW-S3-efH" customClass="TodayViewController" customModule="NewsUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3BT-f4-m9n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="co6-f3-p9N">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kh5-hb-Q6c">
+                                    <size key="itemSize" width="250" height="250"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zt6-i3-Cx8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="vgW-S3-efH" id="OzO-Nn-1Zs"/>
+                                    <outlet property="delegate" destination="vgW-S3-efH" id="cdO-2h-934"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZUV-4r-qAz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="co6-f3-p9N" firstAttribute="bottom" secondItem="ZUV-4r-qAz" secondAttribute="bottom" id="AoD-3a-dOd"/>
+                            <constraint firstItem="co6-f3-p9N" firstAttribute="top" secondItem="ZUV-4r-qAz" secondAttribute="top" id="CE4-MC-clH"/>
+                            <constraint firstItem="co6-f3-p9N" firstAttribute="leading" secondItem="ZUV-4r-qAz" secondAttribute="leading" id="mrb-OT-y2Y"/>
+                            <constraint firstItem="co6-f3-p9N" firstAttribute="trailing" secondItem="ZUV-4r-qAz" secondAttribute="trailing" id="p3p-YA-gQh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Today" image="calendar.badge.plus" catalog="system" selectedImage="calendar.badge.plus" id="wsW-Sr-dnS"/>
+                    <connections>
+                        <outlet property="todayCollectionView" destination="co6-f3-p9N" id="HVL-Oj-d8w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yeX-TJ-qw9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="-1511"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="bfk-c0-OrY">
+            <objects>
+                <tabBarController id="tu8-Vk-xyf" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fzB-pI-prY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vgW-S3-efH" kind="relationship" relationship="viewControllers" id="hbl-6Y-fBL"/>
+                        <segue destination="zHq-Vg-Rjz" kind="relationship" relationship="viewControllers" id="93d-aV-S1s"/>
+                        <segue destination="NYU-cF-jsp" kind="relationship" relationship="viewControllers" id="zmo-kP-Xej"/>
+                        <segue destination="XLv-8k-2WG" kind="relationship" relationship="viewControllers" id="R0z-KF-9YT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yy-YO-kLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="-164"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

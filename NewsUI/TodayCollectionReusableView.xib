@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+            <rect key="frame" x="0.0" y="0.0" width="333" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3X0-Up-gXA">
+                    <rect key="frame" x="0.0" y="0.0" width="333" height="65"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RXI-hc-j1F">
+                            <rect key="frame" x="5" y="5" width="323" height="55"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 March" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-os-9Wl">
+                                    <rect key="frame" x="0.0" y="0.0" width="323" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="uwe-Og-p63"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkJ-Zd-JuD">
+                                    <rect key="frame" x="0.0" y="25" width="323" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="RBD-LB-XoN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="TZH-3V-7we"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="RXI-hc-j1F" secondAttribute="trailing" constant="5" id="JV1-nH-akw"/>
+                        <constraint firstItem="RXI-hc-j1F" firstAttribute="leading" secondItem="3X0-Up-gXA" secondAttribute="leading" constant="5" id="jsz-BR-ykW"/>
+                        <constraint firstAttribute="bottom" secondItem="RXI-hc-j1F" secondAttribute="bottom" constant="5" id="qFI-Wq-cS6"/>
+                        <constraint firstItem="RXI-hc-j1F" firstAttribute="top" secondItem="3X0-Up-gXA" secondAttribute="top" constant="5" id="s1P-Ou-kGP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="3X0-Up-gXA" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Hly-DP-Mht"/>
+                <constraint firstItem="3X0-Up-gXA" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="NxG-Rm-8RX"/>
+                <constraint firstAttribute="bottom" secondItem="3X0-Up-gXA" secondAttribute="bottom" id="Xjl-mP-fzH"/>
+                <constraint firstItem="3X0-Up-gXA" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="gps-uw-Kr1"/>
+            </constraints>
+            <point key="canvasLocation" x="-3.6231884057971016" y="111.49553571428571"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
