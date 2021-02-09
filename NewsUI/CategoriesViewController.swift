@@ -16,11 +16,11 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      setConfigure()
+        configureUI()
 
     }
     
-    private func setConfigure() {
+    private func configureUI() {
 
 
         categoriesCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "categoryViewCell")
@@ -36,12 +36,23 @@ class CategoriesViewController: UIViewController {
         
         categoriesCollectionView.reloadData()
         
-        categoriesCollectionView.collectionViewLayout = categoriesViewModel.createCompositionalLayout()
+        categoriesCollectionView.collectionViewLayout = createCompositionalLayout()
         
     }
-
     
+    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        
+        return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
+            
+            switch sectionNumber {
+            
+            case 0: return categoriesGrid()
+            case 1: return newsGrid()
+            default: return newsGrid()
 
+            }
+        }
+    }
 }
 
 extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -59,18 +70,37 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        categoriesViewModel.cellForItemAt(collectionView, indexPath: indexPath)
+        if indexPath.row >= 0 && indexPath.row <= 5 && indexPath.section == 0 {
+            let discoverCell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryViewCell", for: indexPath) as! CategoryCollectionViewCell
+            return discoverCell
+        } else if indexPath.row >= 0 && indexPath.row <= 3 && indexPath.section == 1 {
+            let tomorrowCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TomorrowCell", for: indexPath) as! TomorrowCollectionViewCell
+            return tomorrowCell
+        } else if indexPath.row >= 0 && indexPath.row <= 3 && indexPath.section == 2 {
+            let tomorrowCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TomorrowCell", for: indexPath) as! TomorrowCollectionViewCell
+            return tomorrowCell
+        }
+        
+        return UICollectionViewCell()
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard kind == UICollectionView.elementKindSectionHeader else {
             return UICollectionReusableView()
         }
         
-        let view = categoriesViewModel.setHeader(collectionView: collectionView, viewForSupplementaryElementOfKind: kind, indexPath: indexPath)
-
-
-        return view
+        switch indexPath.section {
+        case 0:
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "SearchHeaderCell",for: indexPath) as! SearchHeaderCell
+            return view
+        case 1:
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "CategoryCell",for: indexPath) as! CategoryViewCell
+            return view
+        default:
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "CategoryCell",for: indexPath) as! CategoryViewCell
+            return view
+        }
 
     }
 }

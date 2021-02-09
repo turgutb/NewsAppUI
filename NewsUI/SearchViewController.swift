@@ -12,13 +12,13 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
     let searchViewModel: SearchViewModel = SearchViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
-
-      
+        
+        
     }
     
     
@@ -31,10 +31,28 @@ class SearchViewController: UIViewController {
         searchCollectionView.register(UINib(nibName: "SearchHeaderCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SearchHeaderCell")
         searchCollectionView.delegate = self
         searchCollectionView.reloadData()
-        searchCollectionView.collectionViewLayout = searchViewModel.createCompositionalLayout()
+        searchCollectionView.collectionViewLayout = createCompositionalLayout()
     }
     
+    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        
+        return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
+            
+            switch sectionNumber {
+            
+            case 0: return searchCategory()
+            case 1: return search()
+            default: return search()
+                
+            }
+        }
+    }
+    
+    
 }
+
+
+
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -44,26 +62,33 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         searchViewModel.setSection(numberOfItemsInSection: section)
-       
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        searchViewModel.cellForItemAt(collectionView, indexPath: indexPath)
-       
+        if indexPath.row >= 0 && indexPath.row <= 5 && indexPath.section == 0 {
+            let todayCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularCell", for: indexPath) as! PopularCategoriesCollectionViewCell
+            return todayCell
+        } else if indexPath.row >= 0 && indexPath.row <= 5 && indexPath.section == 1{
+            let tomorrowCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularTagsCollectionViewCell", for: indexPath) as! PopularTagsCollectionViewCell
+            return tomorrowCell
+        }
+        
+        return UICollectionViewCell()
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-       
-        guard kind == UICollectionView.elementKindSectionHeader else {
-            return UICollectionReusableView()
+        
+        switch indexPath.section {
+        case 0:
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "SearchHeaderCell",for: indexPath) as! SearchHeaderCell
+            return view
+        default:
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "SearchHeaderCell",for: indexPath) as! SearchHeaderCell
+            return view
         }
         
-        let view = searchViewModel.setHeader(collectionView: collectionView, viewForSupplementaryElementOfKind: kind, indexPath: indexPath)
-        
-        return view
-        
-       
     }
-    
 }
